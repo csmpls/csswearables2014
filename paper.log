@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.7.3)  15 JUL 2014 15:49
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2014.7.3)  22 JUL 2014 16:38
 entering extended mode
  %&-line parsing enabled.
-**test1.tex
-(./test1.tex
+**paper.tex
+(./paper.tex
 LaTeX2e <2009/09/24>
 Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
 yphenation, loaded.
@@ -277,15 +277,8 @@ Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
-) (./test1.aux
-
-LaTeX Warning: Label `fig:fig2' multiply defined.
-
-
-LaTeX Warning: Label `fig:fig2' multiply defined.
-
-)
-\openout1 = `test1.aux'.
+) (./paper.aux)
+\openout1 = `paper.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
 LaTeX Font Info:    ... okay on input line 21.
@@ -296,7 +289,8 @@ LaTeX Font Info:    ... okay on input line 21.
 LaTeX Font Info:    Checking defaults for OMS/pzccm/m/n on input line 21.
 LaTeX Font Info:    Try loading font information for OMS+pzccm on input line 21
 .
- (/usr/share/texmf-texlive/tex/latex/psnfss/omspzccm.fd
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omspzccm.fd
 File: omspzccm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/pzccm.
 )
 LaTeX Font Info:    ... okay on input line 21.
@@ -321,217 +315,81 @@ LaTeX Font Info:    ... okay on input line 21.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 35.
-LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 35
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 41.
+LaTeX Font Info:    Try loading font information for OT1+ptmcm on input line 41
 .
  (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptmcm.fd
 File: ot1ptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 35
+LaTeX Font Info:    Try loading font information for OML+ptmcm on input line 41
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omlptmcm.fd
 File: omlptmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ptmcm.
 )
-LaTeX Font Info:    Try loading font information for OMX+psycm on input line 35
+LaTeX Font Info:    Try loading font information for OMX+psycm on input line 41
 .
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omxpsycm.fd
 File: omxpsycm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/psycm.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 35.
+LaTeX Font Info:    Try loading font information for U+msa on input line 41.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 35.
+LaTeX Font Info:    Try loading font information for U+msb on input line 41.
 
 (/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.69997> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5.5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 35.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 41.
 
-Underfull \hbox (badness 10000) in paragraph at lines 35--35
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
 
  []
 
-(./Sections/intro.tex
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <13> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1.
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ° in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-) (./Sections/background.tex
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 2.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 46.
 
-
-
-
-]
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
-
-Underfull \vbox (badness 2970) has occurred while \output is active []
-
- [2])
-(./Sections/method.tex
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 11.
-
-Underfull \hbox (badness 1496) in paragraph at lines 17--18
-\OT1/ptm/m/n/10 1.5,1.5-1.75,1.75-2) have the val-ues (4,4,5,5) the
+Underfull \hbox (badness 3199) in paragraph at lines 48--49
+[]\OT1/ptm/m/n/10 Our abil-ity to build ef-fec-tive, use-ful brain-
  []
 
-
-LaTeX Warning: Reference `binnedEEGpowerspec' on page 3 undefined on input line
- 31.
-
-[3]) (./Sections/results.tex <Figures/1-2.png, id=17, 578.16pt x 433.62pt>
-File: Figures/1-2.png Graphic file (type png)
-
-<use Figures/1-2.png> <Figures/3-1.png, id=19, 578.16pt x 433.62pt>
-File: Figures/3-1.png Graphic file (type png)
-
-<use Figures/3-1.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Figures/3.png, id=20, 578.16pt x 433.62pt>
-File: Figures/3.png Graphic file (type png)
- <use Figures/3.png>
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Figures/7.png, id=21, 578.16pt x 433.62pt>
-File: Figures/7.png Graphic file (type png)
- <use Figures/7.png> [4 <./Figures/1-2.png>]) (./Sections/discussion.tex
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-) (./test1.bbl
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no º in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
- [5 <./Figures/3-1.png> <./Figures/3.png> <./Figures/7.png>]
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no º in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ò in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ò in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ° in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no © in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ° in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no º in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no º in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no º in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ì in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no º in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no º in font ptmr7t!
-Missing character: There is no √ in font ptmr7t!
-Missing character: There is no º in font ptmr7t!
- [6]) [7
-
-] (./test1.aux)
-
-LaTeX Warning: There were undefined references.
+No file paper.bbl.
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-LaTeX Warning: There were multiply-defined labels.
 
- ) 
+
+] (./paper.aux) ) 
 Here is how much of TeX's memory you used:
- 3568 strings out of 495061
- 49598 string characters out of 1182622
- 119461 words of memory out of 3000000
- 6668 multiletter control sequences out of 15000+50000
- 50577 words of font info for 112 fonts, out of 3000000 for 9000
+ 3459 strings out of 495061
+ 47733 string characters out of 1182622
+ 113461 words of memory out of 3000000
+ 6588 multiletter control sequences out of 15000+50000
+ 35747 words of font info for 81 fonts, out of 3000000 for 9000
  28 hyphenation exceptions out of 8191
- 36i,7n,38p,1730b,290s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pf
-b></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-
-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on test1.pdf (7 pages, 205561 bytes).
+ 36i,7n,38p,809b,270s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/sh
+are/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fo
+nts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/
+utmri8a.pfb>
+Output written on paper.pdf (1 page, 44294 bytes).
 PDF statistics:
- 60 PDF objects out of 1000 (max. 8388607)
+ 19 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
