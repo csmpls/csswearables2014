@@ -24,9 +24,9 @@
 
 
 
-\title{Field Recordings, Mind, and the Eternal Hum or Whisper}
+\title{Field Recordings, Mind, and the Eternal Hum or Whisper: Observing neural activity in the wild and at scale}
 
-\author{\authorname{Nick Merrill\sup{1} and John Chuang\sup{1}}
+\author{\authorname{Nick Merrill\sup{1}, Thomas Maillart\sup{1} and John Chuang\sup{1}}
 \affiliation{\sup{1}School of Information, UC Berkeley, California, USA}
 \email{ffff@berkeley.edu}
 }
@@ -45,7 +45,7 @@
 
 \section{Introduction}
 
-Our ability to build effective, useful brain-computer interface (BCI) is limited by the capabilities of our scanning devices and by our inchoate knowledge of neural activity, especially as it exists outside of lab settings. While we expect mobile brain scanners to improve dramatically over the next few years, our ability to understand brains ``in the wild'' is limited primarily by a paucity of relevant data. Almost all neurological studies, BCI research included, occurs under controlled conditions rather than in the normal human habitat, a perceptually rich environment in which people are moving freely and interacting space, objects and people.
+Our ability to build effective, useful brain-computer interface (BCI) is limited by the capabilities of our scanning devices and by our inchoate knowledge of neural activity, especially about how it looks outside of lab settings. While we expect mobile brain scanners to improve dramatically over the next few years, our ability to understand brains ``in the wild'' is hampered primarily by a paucity of relevant data. Almost all neurological studies, BCI research included, occurs under controlled conditions rather than in the normal human habitat, a perceptually rich environment in which people are moving freely and interacting with space, objects and people.
 % consider adding: (the Melon headband, Interaxon Muse and Emotiv Insight all promise much better scanning resolution, comfort and battery life than current-generation devices)
 
 Presently, there exists no large-scale repository for ``field recordings'' (i.e., long-timescale recordings taken in uncontrolled, non-lab environments) of neural signals, making it difficult for researchers to draw the sorts of observations that might improve BCIs, and our understanding of mind generally.
@@ -63,15 +63,65 @@ This paper imagines a platform for neural field recordings, approaching the prob
 
 \section{Background \& Related Work}
 
-- everyman's intro to bci, w ML esp
+\subsection{Brain-computer interface}
 
-- BCI in the wild (still so bad)
+Brain-computer interface aims to establish a direct connection between the human nervous system and a digital computer, without intermediate muscular intervention. Obvious applications include devices and tools for the severely disabled, for whom muscular activity is difficult or impossible, but BCI has a potentially very wide audience if it is convenient enough to use; it promises to increase our overall communicative capacity with digital machines, and to passively monitor our cognitive load and emotional states, helping us better adapt to our environment and to ourselves.
 
-- data repositories for science
+Attempts at BCI generally employ adaptive, machine-learning algorithms, as neural signals vary from person to person, and change within individuals over time (this is refferred to as ``nonstationarity'' - that is,  that there exists no static model of neural functioning that will work reliably with all people at all times). Some \textit{a priori} neurological knowledge is generally employed, usually around a central strategy (e.g., P300, SSVP, motor imagery, etc; see [] for a review of BCI strategies). Thereafter, an adaptive algorithm, usually a linear classifier, is trained on sample data, and this calibration closes the gap between the theoretical basis behind the system and the observed data in reality.
+
+\subsection{BCI in the wild}
+
+There have been numerous attempts to deploy brain-computer interfaces in outside-of-lab settings. Many wireless EEG headsets exist - there are at least four on the market presently, and three new devices slated for release in the immediate future. From an application standpoint, some commercial ventures into ``direct-control'' BCI applications have recieved wide media attention as of late (e.g. an application for Google Glass that takes a picture when the user focuses). Historically, most consumer BCI solutions have centered more around affective and emotional measurement such as stress detectors, meditation coaches, applications that claim to monitor mental workload, and so on. The claims behind these devices are difficult to rigorously validate, as the developers of these applications understandably do not publish detailed information about their use.
+
+From the academic side of things, a few applications have surfaced employing consumer-grade wireless headsets. One application authenticates users using their brainwaves alone, and various others have replicated the levels of control achieved with in-lab direct-control BCI systems, with varying levels of success. A few of these projects have cognitive load measurements in real-life work situations, and a few have looked at in-the-wild emotional response. Overwhelmingly, however, academic approaches to BCI have approached their subjects and analysis from inside the lab, while free-market ventures into BCI have not rigorously collected or disseminated data on their applications' use.
+
+
+\subsection{Large-scale data repositories for scientific research}
 
 
 
 
+
+
+
+
+\section{Specifications}
+
+The BCI community, as well as the neuroscience and wearable computing \textit{(have i really established this, does this paper really establish its relevance to the larger wearables community)} communities at large, could benefit from a large-scale repository of neurological data recorded in real-world settings. In this section, we describe the specifications for an open collection platform aimed at field recordings of neural data. We focus specifically on the use of electroencephalography (EEG) \textit{(mention eeg stuff earlier?)} due to its wide adoption in BCI and as a format for consumer brainscanners.
+
+\subsection{Scalability}
+
+A system for storing neural recordings is unlike traditional web applications (Twitter, Facebook, Youtube) in that we expect each user to produce a much larger volume of (raw) data, and to submit that data more frequently. The Neurosky MindWave, a current-generation wireless EEG with a single electrode, produces approximately a megabyte of raw data every minute. This bitrate will increase linearly with the number of electrodes on the device; just the devices on the immediate horizon will produce up to five times this volume of data. With each user producing gigabytes of data every day in chronic recording scenarios, the system will not scale well to large number of users.
+
+\subsection{Redundancy \& Control}
+
+Any useful repository of scientific data must be openly accessible, but ownership over the data itself becomes a more nuanced issue as the volume of data increases. For large data repositories, the cost of maintaining the requisite server space and the bandwidth necessary to make the data on those servers widely accessible can be formidable, at least with traditional, centralized architectures. Besides, these sorts of architectures put data under the ownership of a single entity or individual, which is problematic occasionally from a practical standpoint (data loss, outages, economic issues, etc), but from an intellectual standpoint as well, as scientific data ought to be ..... well. lol
+
+\subsection{Privacy}
+
+In line with the regulations of any internal review board, all data collected on this platform must be anonymous or, at the very least, psuedonymous. Users should be able to remove their data from the system at any time (``the right to be forgotten'' as it has lately been called) and there might exist an option by which users require permission for their data to be accessed, or at least accessed on a continual basis.
+
+\subsection{End user concerns}
+
+If we are to collect intimate information from volunteers, we must certainly offer them something in return. Any system that collects data on a large scale must be equally capable of delivering value based on that data, preferably such that applications could adjust fluidly to future observations or developments based off the data collected through the system at large. 
+
+
+
+
+\section{Design recommendations}
+
+\subsection{A lossy fileformat for EEG data}
+Raw recordings may not be necessary to produce useful insights about neural data, especially at high volume. A lossy file format may be sufficient, the proverbial mp3 of neural data. What might this file format look like?
+
+\subsection{A decentralized network}
+
+\subsection{A decoupled application layer}
+
+
+
+
+
+\section{Discussion}
 
 
 
