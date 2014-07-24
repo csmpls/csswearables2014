@@ -50,7 +50,7 @@ Our ability to build effective, useful brain-computer interface (BCI) is limited
 
 Presently, there exists no large-scale repository for ``field recordings'' (i.e., long-timescale recordings taken in uncontrolled, non-lab environments) of neural signals, making it difficult for researchers to draw the sorts of observations that might improve BCIs, and our understanding of mind generally.
 
-The difficulty of dealing with subject-to-subject and trial-to-trial changes in neural signals provides a salient example of our knowledge gap: a BCI that works with one person will most likely not work with another, and may even stop working on the original subject over time, due simply to the fact that minds shift and change and grow. It is tempting to believe that such changes, especially those observed within subjects over time, can be predicted statistically, at least to some extent, given enough data. However, without a large-scale source of neural field recordings, it is difficult or impossible for researchers to make the sorts of observations necessary to investigate such patterns.
+The difficulty of dealing with subject-to-subject and trial-to-trial changes in neural signals provides a salient example of our knowledge gap: a BCI that works with one person will most likely not work with another, and may even stop working on the original subject over time, due simply to the fact that minds shift and change and grow. It is tempting to believe that such changes, especially those observed within subjects over time, can be anticipated or at least described statistically, to some extent, given enough data. However, without a large-scale source of neural field recordings, it is difficult or impossible for researchers to make the sorts of observations necessary to investigate such patterns.
 
 This paper imagines a platform for neural field recordings, approaching the problem from an information architecture standpoint and from a user interface one. How do we scale a data collection platform to hundreds of thousands of users, all of whom are producing megabytes of data every minute? How do we incentivize users to donate their neural data, and how do we assure their privacy? How might we manage access and ownership in a publically available research repository while maintaining the confidentiality of individuals involved?
 
@@ -71,7 +71,7 @@ Attempts at BCI generally employ adaptive, machine-learning algorithms, as neura
 
 \subsection{BCI in the wild}
 
-There have been numerous attempts to deploy brain-computer interfaces in outside-of-lab settings. Many wireless EEG headsets exist - there are at least four on the market presently, and three new devices slated for release in the immediate future. From an application standpoint, some commercial ventures into ``direct-control'' BCI applications have recieved wide media attention as of late (e.g. an application for Google Glass that takes a picture when the user focuses). Historically, most consumer BCI solutions have centered more around affective and emotional measurement such as stress detectors, meditation coaches, applications that claim to monitor mental workload, and so on. The claims behind these devices are difficult to rigorously validate, as the developers of these applications understandably do not publish detailed information about their use.
+There have been numerous attempts to deploy brain-computer interfaces in outside-of-lab settings. Many wireless EEG headsets exist - there are at least four on the market presently, and three new devices slated for release in the immediate future. From an application standpoint, some commercial ventures into ``direct-control'' BCI applications have recieved wide media attention as of late (e.g. an application for Google Glass that takes a picture when the user focuses). Historically, consumer BCI applications have centered more around affective and emotional measurement such as stress detectors, meditation coaches, applications aimed at monitoring mental workload, and so on. The claims behind these devices are difficult to rigorously validate, as the developers of these applications understandably do not publish detailed information about their use.
 
 From the academic side of things, a few applications have surfaced employing consumer-grade wireless headsets. One application authenticates users using their brainwaves alone, and various others have replicated the levels of control achieved with in-lab direct-control BCI systems, with varying levels of success. A few of these projects have cognitive load measurements in real-life work situations, and a few have looked at in-the-wild emotional response. Overwhelmingly, however, academic approaches to BCI have approached their subjects and analysis from inside the lab, while free-market ventures into BCI have not rigorously collected or disseminated data on their applications' use.
 
@@ -99,7 +99,7 @@ Any useful repository of scientific data must be openly accessible, but ownershi
 
 \subsection{Privacy}
 
-In line with the regulations of any internal review board, all data collected on this platform must be anonymous or, at the very least, psuedonymous. Users should be able to remove their data from the system at any time (``the right to be forgotten'' as it has lately been called) and there might exist an option by which users require permission for their data to be accessed, or at least accessed on a continual basis.
+In line with the regulations enforced by any internal review board, all data collected on this platform must be anonymous or, at the very least, psuedonymous. Users should be able to remove their data from the system at any time (``the right to be forgotten'' as it has lately been called, analogous to the right of experimental subjects to withdraw from a study), and there might exist an option by which users can require permission for their data to be accessed, or at least to be accessed on a continual basis.
 
 \subsection{End user concerns}
 
@@ -108,10 +108,16 @@ If we are to collect intimate information from volunteers, we must certainly off
 
 
 
+
+
 \section{Design recommendations}
 
 \subsection{A lossy fileformat for EEG data}
 Raw recordings may not be necessary to produce useful insights about neural data, especially at high volume. A lossy file format may be sufficient, the proverbial mp3 of neural data. What might this file format look like?
+
+One option is to ``quantize'' the data - to pull points we believe to be relevant or informative and to discard the rest of the signal. One quantization method we have found particularly effective is the selection of logarithmically-spaced points in a continuous power spectrum of EEG data. We find that even at low numbers of bins (25-50, about 80 bytes), we can achieve very strong classification accuracy on mental imagery tasks using a support vector machine (SVM). Our accuracy can be bulstered by compressing continuous readings in the time dimension by averaging each bin reading over a number of signals, an effect that we have found to persit at EEG recordings up to ten seconds in length. This latter technique has the happy effect of further reducing our data output (at ten seconds, the total bin data would be 80 bytes as opposed to 80 bytes * 20 power spectra). These findings are summarized in Figure 1.
+
+Another approach is to maximize the informativeness of the signal by replacing individual data points with a model that describes statistically how a reading appeared over a period of time. A brain with relatively stable activity (e.g. deep sleep, or REM, typified by elevated activity in the gamma band and supressed activity in the alpha band) need not be described as an hour of continuous readings; instead, it could be described as a statistical range of observed values, or even as a cyclical pattern that repeats, if such a model is relevant and appropriate. Data in this format need be represented merely by the model and whatever observed data deviated from it (e.g., ``an hour of REM with a spike in alpha activity between seconds 530 and 620''). By representing readings this way, an EEG signal could be described probabilistically at any point in time with representing discrete readings from the device. \textit{does this sort of technique have a name? i know this has to do with exploiting low entropy in the signal, so i feel it must have some kind of information theoretic way of being expressed or quantified; i wouldn't be surprised if there's a class of compression algos aimed at generating patterns like these.}
 
 \subsection{A decentralized network}
 
