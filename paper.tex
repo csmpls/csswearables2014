@@ -24,7 +24,7 @@
 
 
 
-\title{Field Recordings, Mind, and the Eternal Hum or Whisper: Observing neural activity in the wild and at scale}
+\title{Field Recordings, Mind, and the Eternal Hum or Whisper: Observing neural activity out of the lab and at scale}
 
 \author{\authorname{Nick Merrill\sup{1}, Thomas Maillart\sup{1} and John Chuang\sup{1}}
 \affiliation{\sup{1}School of Information, UC Berkeley, California, USA}
@@ -36,7 +36,7 @@
 
 
 
-\abstract{whysoever why and when, and why not}
+\abstract{Though our minds are continuously outputting a wealth of neurological data as we live and interact with people and our environment, the vast majority of our knowledge about the mind is inferred from observations made in controlled, laboratory conditions. Recently, the equipment used for brain-computer interface (BCI) has become portable, powerful and ergonomic enough that the continuous recording of neural signals ``in the wild'' is a present reality. This paper discusses the design space of a system for the pervasive recording of neural signals in real-world settings. We propose a decentralized repository aimed at at-scale data anlytics on ``in the wild'' EEG data and enumerate possibilities for how such data might be efficiently stored and how the privacy of research participants could be protected. we believe this design space might be relevant to sensor-driven applications generally.}
 
 \onecolumn \maketitle \normalsize \vfill
 
@@ -48,7 +48,7 @@
 Our ability to build effective, useful brain-computer interface (BCI) is limited by the capabilities of our scanning devices and by our inchoate knowledge of neural activity, especially about how it looks outside of lab settings. While we expect mobile brain scanners to improve dramatically over the next few years, our ability to understand brains ``in the wild'' is hampered primarily by a paucity of relevant data. Almost all neurological studies, BCI research included, occurs under controlled conditions rather than in the normal human habitat, a perceptually rich environment in which people are moving freely and interacting with space, objects and people.
 % consider adding: (the Melon headband, Interaxon Muse and Emotiv Insight all promise much better scanning resolution, comfort and battery life than current-generation devices)
 
-Presently, there exists no large-scale repository for ``field recordings'' (i.e., long-timescale recordings taken in uncontrolled, non-lab environments) of neural signals, making it difficult for researchers to draw the sorts of observations that might improve BCIs, and our understanding of mind generally.
+Presently, there exists no large-scale repository for ``field recordings'' (i.e., long-timescale recordings taken in uncontrolled, non-lab environments) of neural signals, making it difficult for researchers to draw the sorts of observations that might improve BCIs, and our understanding of mind generally. However, the equipment used by BCI researchers is now small and ergonomic enough as to allow chronic \& ubiquituous recording of neural signals.
 
 The difficulty of dealing with subject-to-subject and trial-to-trial changes in neural signals provides a salient example of our knowledge gap: a BCI that works with one person will most likely not work with another, and may even stop working on the original subject over time, due simply to the fact that minds shift and change and grow. It is tempting to believe that such changes, especially those observed within subjects over time, can be anticipated or at least described statistically, to some extent, given enough data. However, without a large-scale source of neural field recordings, it is difficult or impossible for researchers to make the sorts of observations necessary to investigate such patterns.
 
@@ -101,6 +101,8 @@ Any useful repository of scientific data must be openly accessible, but ownershi
 
 In line with the regulations enforced by any internal review board, all data collected on this platform must be anonymous or, at the very least, psuedonymous. Users should be able to remove their data from the system at any time (``the right to be forgotten'' as it has lately been called, analogous to the right of experimental subjects to withdraw from a study), and there might exist an option by which users can require permission for their data to be accessed, or at least to be accessed on a continual basis.
 
+\subsection{Keeping time}
+
 \subsection{End user concerns}
 
 If we are to collect intimate information from volunteers, we must certainly offer them something in return. Any system that collects data on a large scale must be equally capable of delivering value based on that data, preferably such that applications could adjust fluidly to future observations or developments based off the data collected through the system at large. 
@@ -112,6 +114,8 @@ If we are to collect intimate information from volunteers, we must certainly off
 
 \section{Design recommendations}
 
+This section proposes design ideas for building a large-scale repository for EEG data that is efficient, mindful of its users' privacy, and resiliant to centralized points of failure.
+
 \subsection{A lossy fileformat for EEG data}
 Raw recordings may not be necessary to produce useful insights about neural data, especially at high volume. A lossy file format may be sufficient, the proverbial mp3 of neural data. What might this file format look like?
 
@@ -120,6 +124,8 @@ One option is to ``quantize'' the data - to pull points we believe to be relevan
 Another approach is to maximize the informativeness of the signal by replacing individual data points with a model that describes statistically how a reading appeared over a period of time. A brain with relatively stable activity (e.g. deep sleep, or REM, typified by elevated activity in the gamma band and supressed activity in the alpha band) need not be described as an hour of continuous readings; instead, it could be described as a statistical range of observed values, or even as a cyclical pattern that repeats, if such a model is relevant and appropriate. Data in this format need be represented merely by the model and whatever observed data deviated from it (e.g., ``an hour of REM with a spike in alpha activity between seconds 530 and 620''). By representing readings this way, an EEG signal could be described probabilistically at any point in time with representing discrete readings from the device. \textit{does this sort of technique have a name? i know this has to do with exploiting low entropy in the signal, so i feel it must have some kind of information theoretic way of being expressed or quantified; i wouldn't be surprised if there's a class of compression algos aimed at generating patterns like these.}
 
 \subsection{A decentralized network}
+
+\subsection{Digital rights management for research participants}
 
 \subsection{A decoupled application layer}
 
